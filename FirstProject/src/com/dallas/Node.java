@@ -7,6 +7,7 @@ import java.util.List;
  * Created by vinj-venkat on 4/2/2017.
  */
 public class Node {
+
     private String nodeName;
     private List<String> dependencyNodes = new ArrayList();
 
