@@ -1,10 +1,24 @@
-A -> B
-B -> C
-B -> Z
-C -> D
-C -> X
-D -> A
-A -> E
-E -> F
-F -> G
-G -> A
+A->B
+A->J
+B->C
+B->D
+C->E
+D->F
+D->G
+D->J
+E->H
+E->M
+F->H
+H->L
+I->O
+I->P
+I->K
+J->I
+J->Q
+K->N
+K->L
+L->I
+M->N
+M->H
+O->P
+P->Q
