@@ -66,7 +66,7 @@ public class Main {
 
             int currentDepth = currentNode.getNodeDepth();
 
-            String space = " ";
+            //String space = " ";
             //String parentLinkDepthSpace = String.join("", Collections.nCopies(leastParentDepth, space));
             //String currentDepthSpace = String.join("", Collections.nCopies(currentDepth - leastParentDepth, space));
             //String repeatedSpace = String.join("", Collections.nCopies(depthIndex - rootDepth, space));
@@ -81,8 +81,8 @@ public class Main {
 
                 for(int i = 0; i <= currentDepth; i++)
                 {
-                    String currentSpace = String.join("", Collections.nCopies(i, space));
-                    buffer.append(currentSpace + "|");
+                    String currentSpace = " ";
+                    buffer.append("|" + currentSpace);
                 }
 
                 buffer.append("_" + currentNode.getNodeName());
