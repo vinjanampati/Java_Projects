@@ -33,10 +33,9 @@ public class Main {
             HashSet<String> visitedNodes = new HashSet<>();
             visitedNodes.add(entry.getKey());
             Queue<DisplayNode> childrenWithDepth = new LinkedList<>();
-
-            int depth= 0;
-
             for (String dependentNodeString : entry.getValue().getDependencyNodes()) {
+
+                int depth= 0;
 
                 if (nodeCollection.containsKey(dependentNodeString) && nodeCollection.get(dependentNodeString).getDependencyNodes().size() > 0) {
                     AddDisplayNodesRecursive(depth, dependentNodeString, visitedNodes, nodeCollection, childrenWithDepth);
@@ -157,7 +156,7 @@ public class Main {
 
 
         DisplayNode displayNode = new DisplayNode();
-        displayNode.setNodeDepth(currentDepth);
+        displayNode.setNodeDepth(currentDepth++);
         displayNode.setNodeName(currentNode);
         displayNodes.add(displayNode);
         visitedNodes.add(currentNode);
@@ -166,11 +165,10 @@ public class Main {
 
             for (String childNodeString : nodeCollection.get(currentNode).getDependencyNodes()) {
                 if (nodeCollection.containsKey(childNodeString) && nodeCollection.get(childNodeString).getDependencyNodes().size() > 0) {
-                    currentDepth++;
                     AddDisplayNodesRecursive(currentDepth, childNodeString, visitedNodes, nodeCollection, displayNodes);
                 } else {
                     DisplayNode nodeWithNoChildren = new DisplayNode();
-                    nodeWithNoChildren.setNodeDepth(currentDepth++);
+                    nodeWithNoChildren.setNodeDepth(currentDepth);
                     nodeWithNoChildren.setNodeName(childNodeString);
                     displayNodes.add(nodeWithNoChildren);
                     visitedNodes.add(childNodeString);
